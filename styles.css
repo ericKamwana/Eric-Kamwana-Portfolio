@@ -8,7 +8,7 @@
   /* Body */
   body {
     font-family: Arial, sans-serif;
-    background: url("images/imagesbackground.jpg") no-repeat center center fixed;
+    background: url("../images/imagesbackground.jpg") no-repeat center center fixed;
     background-size: cover;
     color: #333;
   }
@@ -84,6 +84,11 @@
     line-height: 1.6;
   }
   
+  /* Hero Buttons */
+  .hero-buttons {
+    margin-top: 15px;
+  }
+  
   /* CTA Button */
   .cta {
     display: inline-block;
@@ -115,6 +120,22 @@
   
   .btn-cv:hover {
     background: #218838;
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
   }
   
   /* Hero Right (Skills Aside) */
@@ -178,7 +199,7 @@
     cursor: pointer;
   }
   
-  /* Contact Links */
+  /* Contact Page Links */
   #contact a {
     color: #007bff;
     text-decoration: none;
