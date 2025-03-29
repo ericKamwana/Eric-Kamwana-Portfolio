@@ -1,45 +1,91 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background: url('images/imagesbackground.jpg') no-repeat center center fixed;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    background: url("images/imagesbackground.jpg") no-repeat center center fixed;
     background-size: cover;
     color: #333;
-}
-
-/* Header */
-header {
+  }
+  
+  /* Header / Nav */
+  header {
     background: #ffffff;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Navigation */
-nav ul {
+  }
+  
+  nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 0;
-}
-
-nav ul li {
+  }
+  
+  nav ul li {
     margin: 0 15px;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.cta {
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #007bff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex; /* So we can position left content and right aside */
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    padding: 40px 20px;
+    min-height: 70vh;
+  }
+  
+  /* Hero Left Content */
+  .hero-left {
+    flex: 2;
+    min-width: 300px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  /* Profile Picture */
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* Hero Titles & Bio */
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-bio {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* CTA Button */
+  .cta {
     display: inline-block;
     padding: 10px 20px;
     background: #007bff;
@@ -47,8 +93,98 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
-}
-
-.cta:hover {
+    transition: background 0.3s;
+  }
+  
+  .cta:hover {
     background: #0056b3;
-}
+  }
+  
+  /* Hero Right (Skills Aside) */
+  .hero-right {
+    flex: 1;
+    min-width: 280px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+  }
+  
+  /* Skills Section in Aside */
+  #skills h2 {
+    margin-bottom: 15px;
+  }
+  
+  /* Details / Summary (Drop-down) */
+  details {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #fff;
+  }
+  
+  details summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  details ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Sections (Projects, Experience, Contact) */
+  section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  section h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Experience Items */
+  .experience-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .experience-item h3 {
+    margin-bottom: 5px;
+    color: #007bff;
+  }
+  
+  /* Contact Links */
+  #contact a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  #contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+    }
+    .hero-left, .hero-right {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .hero-left {
+      order: 1;
+    }
+    .hero-right {
+      order: 2;
+    }
+  }
+  
