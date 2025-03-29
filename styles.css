@@ -13,7 +13,7 @@
     color: #333;
   }
   
-  /* Header / Nav */
+  /* Header / Navigation */
   header {
     background: #ffffff;
     padding: 1rem;
@@ -43,8 +43,8 @@
   
   /* Hero Section */
   .hero {
-    display: flex; /* So we can position left content and right aside */
-    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    display: flex;
+    flex-wrap: wrap;
     padding: 40px 20px;
     min-height: 70vh;
   }
@@ -100,6 +100,23 @@
     background: #0056b3;
   }
   
+  /* Download CV Button */
+  .btn-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: background 0.3s;
+  }
+  
+  .btn-cv:hover {
+    background: #218838;
+  }
+  
   /* Hero Right (Skills Aside) */
   .hero-right {
     flex: 1;
@@ -147,17 +164,18 @@
     margin-bottom: 20px;
   }
   
-  /* Experience Items */
-  .experience-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
+  /* Experience Items (Collapsible) */
+  #experience details {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 20px;
+    padding: 10px;
+    background: #fff;
   }
   
-  .experience-item h3 {
-    margin-bottom: 5px;
-    color: #007bff;
+  #experience details summary {
+    font-weight: bold;
+    cursor: pointer;
   }
   
   /* Contact Links */
