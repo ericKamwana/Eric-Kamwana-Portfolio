@@ -10,11 +10,16 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      background-image: url('../images/project-management.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       color: #333;
     }
     header {
-      background-color: #005f73;
+      background-color: rgba(0, 95, 115, 0.8); /* Semi-transparent header */
       padding: 10px;
       text-align: center;
     }
@@ -37,11 +42,11 @@
     }
     .project-container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 50px auto;
       padding: 20px;
-      background-color: #e9ecef;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     .project-title {
       color: #005f73;
@@ -58,6 +63,21 @@
       border-radius: 5px;
       margin-top: 20px;
       text-align: center;
+    }
+    .videos {
+      margin-top: 40px;
+    }
+    .videos h2 {
+      text-align: center;
+      color: #005f73;
+      margin-bottom: 20px;
+    }
+    iframe {
+      display: block;
+      margin: 0 auto 20px auto;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     .nda-section {
       margin-top: 40px;
@@ -94,7 +114,40 @@
     .nda-section button:hover {
       box-shadow: 0 0 20px rgba(230, 57, 70, 1);
     }
+    .documents {
+      display: none; /* Hidden by default */
+      margin-top: 20px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    .documents a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      color: white;
+      background-color: #028090;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .documents a:hover {
+      background-color: #005f73;
+    }
   </style>
+  <script>
+    function showDocuments(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      if (name && email) {
+        document.querySelector('.documents').style.display = 'block';
+      } else {
+        alert('Please fill out your name and email.');
+      }
+    }
+  </script>
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -113,7 +166,7 @@
   <!-- Project Section -->
   <div class="project-container">
     <h1 class="project-title">Marketash: Transforming Agriculture Through Technology</h1>
-    
+
     <div class="overview">
       <p><strong>Introduction:</strong> Marketash is a tech-driven platform revolutionizing agribusiness by connecting farmers directly with buyers and empowering them with AI-powered tools.</p>
       <div class="highlight-box">
@@ -129,22 +182,38 @@
       </ul>
     </div>
 
+    <!-- Video Section -->
+    <div class="videos">
+      <h2>Related Videos</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VjlLpK_nWO4" 
+      title="Uganda's farming app helping farmers cut out middlemen"></iframe>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/8O444CM2fBU" 
+      title="Indian farmers problems - middle men and markets"></iframe>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/8OgaHGf46rU" 
+      title="The challenges faced by African women in agriculture"></iframe>
+    </div>
+
     <!-- NDA Section -->
     <div class="nda-section">
       <h2>Sign NDA to Access Detailed Project Files</h2>
-      <p>To view the full Marketash Business & Marketing Strategy document and the pitch deck, please fill out and submit the form below:</p>
-      <form action="/submit-nda" method="POST">
+      <form onsubmit="showDocuments(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Full Name" required />
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="Your Email Address" required />
 
-        <label for="company">Company (Optional):</label>
-        <input type="text" id="company" name="company" placeholder="Your Company Name" />
-
         <button type="submit">Submit NDA</button>
       </form>
+    </div>
+
+    <!-- Documents Section -->
+    <div class="documents">
+      <h3>Access Marketash Project Files</h3>
+      <a href="../files/Marketash%20Business%20%26%20Marketing%20Strategy.pdf" download>Download Business Strategy</a>
+      <a href="../files/Marketash%20Pitch%20Deck.pdf" download>Download Pitch Deck</a>
     </div>
   </div>
 </body>
