@@ -1,229 +1,316 @@
+/* CSS Variables for easier theming */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --secondary-color: #28a745;
+  --secondary-hover: #218838;
+  --background-overlay: rgba(255, 255, 255, 0.9);
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --border-radius: 10px;
+  --font-family-main: Arial, sans-serif;
+}
+
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body */
-  body {
-    font-family: Arial, sans-serif;
-    background: url("../images/imagesbackground.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-  }
-  
-  /* Header / Navigation */
-  header {
-    background: #ffffff;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    color: #007bff;
-  }
-  
-  /* Hero Section */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: var(--font-family-main);
+  background: url("../images/imagesbackground.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Header / Navigation */
+header {
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  min-height: 70vh;
+}
+
+/* Hero Left Content */
+.hero-left {
+  flex: 2;
+  min-width: 300px;
+  margin-right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: var(--border-radius);
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Hero Titles & Bio */
+.hero-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.hero-bio {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  margin-top: 15px;
+}
+
+/* CTA Button */
+.cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: var(--primary-hover);
+}
+
+/* Download CV Button */
+.btn-cv {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  transition: background 0.3s;
+}
+
+.btn-cv:hover {
+  background: var(--secondary-hover);
+}
+
+/* Contact Info */
+.contact-info {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Right (Skills Aside) */
+.hero-right {
+  flex: 1;
+  min-width: 280px;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  height: fit-content;
+}
+
+/* Skills Section in Aside */
+#skills h2 {
+  margin-bottom: 15px;
+}
+
+/* Details / Summary (Drop-down) */
+details {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+details ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* Experience Items (Collapsible) */
+#experience details {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+}
+
+#experience details summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Contact Page Links */
+#contact a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section Layout */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Shared Styling for Form & Contact Details */
+.contact-form-wrapper,
+.contact-details {
+  width: 100%;
+  max-width: 400px;
+  background: var(--background-overlay);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Contact Form Position */
+.contact-form-wrapper {
+  position: absolute;
+  right: 10%;
+  top: 20px;
+}
+
+/* Form Inputs */
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit Button */
+#contact-form button {
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+#contact-form button:hover {
+  background: var(--primary-hover);
+}
+
+/* Contact Details Styling */
+.contact-details {
+  margin-top: 200px;
+  text-align: center;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  /* Hero Section adjustments */
   .hero {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px 20px;
-    min-height: 70vh;
+    flex-direction: column;
   }
-  
-  /* Hero Left Content */
-  .hero-left {
-    flex: 2;
-    min-width: 300px;
-    margin-right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-  }
-  
-  /* Profile Picture */
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  /* Hero Titles & Bio */
-  .hero-title {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
-  
-  .hero-bio {
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-  
-  /* Hero Buttons */
-  .hero-buttons {
-    margin-top: 15px;
-  }
-  
-  /* CTA Button */
-  .cta {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background 0.3s;
-  }
-  
-  .cta:hover {
-    background: #0056b3;
-  }
-  
-  /* Download CV Button */
-  .btn-cv {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-    transition: background 0.3s;
-  }
-  
-  .btn-cv:hover {
-    background: #218838;
-  }
-  
-  /* Contact Info */
-  .contact-info {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  
-  .contact-info a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .contact-info a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Hero Right (Skills Aside) */
+  .hero-left,
   .hero-right {
-    flex: 1;
-    min-width: 280px;
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    height: fit-content;
-  }
-  
-  /* Skills Section in Aside */
-  #skills h2 {
-    margin-bottom: 15px;
-  }
-  
-  /* Details / Summary (Drop-down) */
-  details {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    background: #fff;
-  }
-  
-  details summary {
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  details ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-  
-  /* Sections (Projects, Experience, Contact) */
-  section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  section h2 {
+    margin-right: 0;
     margin-bottom: 20px;
+    width: 100%;
+  }
+  .hero-left {
+    order: 1;
+  }
+  .hero-right {
+    order: 2;
   }
   
-  /* Experience Items (Collapsible) */
-  #experience details {
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    background: #fff;
+  /* Contact Section adjustments */
+  .contact-form-wrapper {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    max-width: 500px;
   }
-  
-  #experience details summary {
-    font-weight: bold;
-    cursor: pointer;
+  .contact-details {
+    margin-top: 20px;
   }
-  
-  /* Contact Page Links */
-  #contact a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  #contact a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive Media Queries */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-    }
-    .hero-left, .hero-right {
-      margin-right: 0;
-      margin-bottom: 20px;
-      width: 100%;
-    }
-    .hero-left {
-      order: 1;
-    }
-    .hero-right {
-      order: 2;
-    }
-  }
-  
+}

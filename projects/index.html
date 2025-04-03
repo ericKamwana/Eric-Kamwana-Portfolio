@@ -2,35 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Meta description for SEO -->
+  <meta name="description" content="Eric Kamwana's portfolio - Featuring Marketash, a transformative tech-driven agricultural platform." />
   <title>Eric Kamwana | Projects</title>
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #005f73;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    .project-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #e9ecef;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .project-title {
+      color: #005f73;
+      text-align: center;
+    }
+    .overview {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .highlight-box {
+      background-color: #028090;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .nda-section {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #005f73;
+      color: white;
+      border-radius: 8px;
+    }
+    .nda-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .nda-section label {
+      font-weight: bold;
+    }
+    .nda-section input, .nda-section button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .nda-section input {
+      width: 100%;
+    }
+    .nda-section button {
+      background-color: #e63946;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+      transition: all 0.3s ease-in-out;
+    }
+    .nda-section button:hover {
+      box-shadow: 0 0 20px rgba(230, 57, 70, 1);
+    }
+  </style>
 </head>
 <body>
-
   <!-- Header / Navigation -->
   <header>
-    <nav>
+    <nav aria-label="Main Navigation">
       <ul>
         <li><a href="../home/index.html">Home</a></li>
-        <li><a href="../projects/index.html">Projects</a></li>
+        <li><a href="./index.html" aria-current="page">Projects</a></li>
         <li><a href="../experience/index.html">Experience</a></li>
         <li><a href="../contact/index.html">Contact</a></li>
+        <li><a href="../About_Interests/index.html">About & Interests</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Marketash</strong> – Connecting farmers to buyers</li>
-      <li><strong>Aviator AI Bot</strong> – Automated game strategy</li>
-      <li><strong>Personal AI Sidekick</strong> – AI-powered assistant</li>
-      <!-- Add more projects as needed -->
-    </ul>
-  </section>
+  <!-- Project Section -->
+  <div class="project-container">
+    <h1 class="project-title">Marketash: Transforming Agriculture Through Technology</h1>
+    
+    <div class="overview">
+      <p><strong>Introduction:</strong> Marketash is a tech-driven platform revolutionizing agribusiness by connecting farmers directly with buyers and empowering them with AI-powered tools.</p>
+      <div class="highlight-box">
+        <p><strong>Unique Value Proposition:</strong> AI-powered farm consultation, direct-to-buyer sales, bidding systems, financial inclusion, and data-driven insights.</p>
+      </div>
+      <p><strong>Target Market:</strong> Small-scale farmers, buyers, retailers, NGOs, and policymakers.</p>
+      <p><strong>Revenue Model:</strong> Transaction fees, premium AI consultation, subscription plans, data analytics services, and advertisements.</p>
+      <p><strong>Marketing Strategy Highlights:</strong></p>
+      <ul>
+        <li>Storytelling and farmer success stories for community engagement.</li>
+        <li>Partnerships with influencers, NGOs, and institutions.</li>
+        <li>Community outreach and referral incentive programs.</li>
+      </ul>
+    </div>
 
-  <script src="../script.js"></script>
+    <!-- NDA Section -->
+    <div class="nda-section">
+      <h2>Sign NDA to Access Detailed Project Files</h2>
+      <p>To view the full Marketash Business & Marketing Strategy document and the pitch deck, please fill out and submit the form below:</p>
+      <form action="/submit-nda" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+
+        <label for="company">Company (Optional):</label>
+        <input type="text" id="company" name="company" placeholder="Your Company Name" />
+
+        <button type="submit">Submit NDA</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
