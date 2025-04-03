@@ -29,21 +29,50 @@
       color: #005f73;
       text-align: center;
     }
-    form {
+    .contact-info, .contact-form {
+      margin-bottom: 30px;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1em;
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .contact-item img {
+      width: 32px;
+      height: 32px;
+      border-radius: 5px;
+    }
+    .contact-item a {
+      text-decoration: none;
+      color: #005f73;
+      font-weight: bold;
+    }
+    .contact-form form {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
-    label {
+    .contact-form label {
       font-weight: bold;
       color: #333;
     }
-    input, textarea {
+    .contact-form input, .contact-form textarea {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-    button {
+    .contact-form button {
       padding: 10px;
       background-color: #005f73;
       color: white;
@@ -53,26 +82,64 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    button:hover {
+    .contact-form button:hover {
       background-color: #028090;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
+  <!-- Header / Navigation -->
   <header>
     <nav aria-label="Main Navigation">
       <ul>
         <li><a href="../home/index.html">Home</a></li>
         <li><a href="../projects/index.html">Projects</a></li>
         <li><a href="../experience/index.html">Experience</a></li>
-        <li><a href="../contact/index.html">Contact</a></li>
-        <li><a href="../About_Interests/index.html" aria-current="page">About & Interests</a></li>
-
+        <li><a href="./index.html" aria-current="page">Contact</a></li>
+        <li><a href="../About_Interests/index.html">About & Interests</a></li>
       </ul>
     </nav>
   </header>
-  <div class="contact-container">
-    <h1>Contact Me</h1>
+
+  <!-- Contact Details Section -->
+  <div class="contact-container contact-info">
+    <h1>Contact Details</h1>
+    <div class="contact-item">
+      <img src="../images/whatsapp icon.PNG" alt="WhatsApp Icon" />
+      <a href="https://wa.me/254721757537" target="_blank">0721757537 (WhatsApp)</a>
+    </div>
+    <div class="contact-item">
+      <img src="../images/linkedin-icon.PNG" alt="LinkedIn Icon" />
+      <a href="https://linkedin.com/in/eric-kamwana-7418ba12a" target="_blank">LinkedIn</a>
+    </div>
+    <div class="contact-item">
+      <img src="../images/github-icon.JPG" alt="GitHub Icon" />
+      <a href="https://github.com/ericKamwana" target="_blank">GitHub</a>
+    </div>
+    <div class="contact-item">
+      <img src="../images/mobilephone_icon.PNG" alt="Phone Icon" />
+      <span>0798783284 (Phone)</span>
+    </div>
+    <div class="contact-item">
+      <img src="../images/Email-icon.JPG" alt="Email Icon" />
+      <a href="mailto:hb.3kungu@gmail.com">hb.3kungu@gmail.com (Email)</a>
+    </div>
+  </div>
+
+  <!-- Contact Form Section -->
+  <div class="contact-container contact-form">
+    <h1>Send Me a Message</h1>
     <form action="https://formsubmit.co/your-email-here" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Your Full Name" required />
@@ -86,5 +153,10 @@
       <button type="submit">Send Message</button>
     </form>
   </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Eric Kamwana. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
