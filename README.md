@@ -2,7 +2,7 @@
 Overview
 Welcome to the repository of Eric Kamwana's professional portfolio! This website showcases Eric's skills, achievements, experiences, and aspirations in marketing, community relations, and technology.
 
-🌐 Live Demo: Eric Kamwana Portfolio
+🌐 Live Demo: https://erickamwana.netlify.app
 
 Features
 🏠 Home
